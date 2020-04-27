@@ -1,0 +1,225 @@
+$colors:(
+    desatRed:hsl(0, 36%, 70%),
+    softRed:hsl(0, 93%, 68%),
+    darkGrayishRed: hsl(0, 6%, 24%)
+);
+@function color($color){
+    @return map-get($map: $colors, $key:$color );
+}
+
+$josefinSans: 'Josefin Sans', sans-serif;
+
+$gradients:(
+    grad1:linear-gradient(135deg,hsl(0, 0%, 100%),hsl(0, 100%, 98%)),
+    grad2:linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%))
+);
+
+@function gradient($gradient){
+    @return map-get($map: $gradients, $key: $gradient)
+}
+
+
+html{
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    display: grid;
+    grid-template-areas: "logo images"
+                         "texts images"
+                         "credits credits";
+    margin: 0;
+    font-family: $josefinSans;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url(/images/bg-pattern-desktop.svg);
+    padding: 0px 0 0 100px;
+    grid-template-rows: 33px;
+    grid-template-columns: 50vw;
+}
+
+.logo{
+    grid-area:logo;
+    align-self: stretch;    
+}
+
+.wrapper{
+    grid-area:texts;
+    padding: 20px;
+
+    h1{
+        font-size: 60px;
+        text-transform: uppercase;
+        font-weight: 700;
+        width: 20%;
+        letter-spacing: 28px;
+        color: color(darkGrayishRed);
+        
+        .were{
+            color: color(desatRed);
+            font-weight: 300;
+            display: block;
+        }
+    }
+
+    p{
+        color: color(desatRed);
+        width: 70%;
+    }
+
+    
+    #parag{
+        font-size: 10px;
+        color:color(softRed);
+        padding-left: 20px;
+        display: none;
+    }
+
+}
+
+.Input{
+    border: 1px solid color(darkGreyishRed);
+    border-radius: 50vh;
+    object-fit: cover;
+    display: flex;
+    z-index: 3;
+    border: 1px solid color(desatRed)   ;
+    width: 70%;
+
+    input{
+        border: none;
+        flex-grow: 3;
+        z-index:2;
+        border-radius:50vh;
+        background-color: rgba(0,0,0,0);
+        padding: 10px;
+
+        &::placeholder{
+            color: color(desatRed);
+        }
+
+        #buttons{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    button{
+        border-radius: 50vh;
+        background-image: gradient(grad2);
+        height: 50px;
+        width: 90px;
+        margin: 0;
+        border:none;
+        color: white
+
+    }
+}
+
+.lady{
+    grid-area:images;
+    
+    img{
+        object-fit: contain;
+    }
+
+    #heron{
+        display: none;
+    }
+}
+
+.creds{
+    grid-area:credits;
+}
+
+.attribution{
+    font-size: 11px;
+    text-align: center;
+
+    a{
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+@media(max-width:375px){
+    body{
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        width: 100%;
+
+
+        .logo{
+            order:1;
+            margin: 30px;
+        }
+
+        .lady{
+            order:2;
+            margin: 0;
+            box-sizing: border-box;
+
+            #hero{
+                display: none;
+            }
+
+            #heron{
+                display: initial;
+            }
+
+            img{
+                //object-fit: cover;
+                width: 100%;
+                height:40vh;
+            }
+
+        }
+
+        .wrapper{
+            order:3;
+            padding:10%;
+            width: 80%;
+            box-sizing: border-box;
+            margin: auto;
+
+            h1{
+                width: 100%;
+                font-size: 25px;
+                letter-spacing: 8px;
+                margin: 10%;
+            }
+
+            p{
+                width: initial;
+                font-size: 10px;
+            }
+
+            .Input{
+                width: initial;
+                height: 40px;
+                box-sizing: border-box;
+
+                input{
+                    flex-grow: initial;
+                    padding: 10px;
+                    box-sizing: border-box  ;
+                    width: 169px;
+                }
+
+                button{
+                    border-radius: 100%;
+                    height:auto;
+                    width: 140px;
+                }
+            }
+        }
+
+        .creds{
+            order:4;
+            
+            p{
+                font-size: 6px;
+            }
+        }
+    }
+}

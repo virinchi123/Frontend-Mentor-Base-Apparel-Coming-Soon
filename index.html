@@ -5,28 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/main.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
   
+  <script src="/main.js" type="text/javascript"></script>
+
   <title>Frontend Mentor | Base Apparel coming soon page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
 </head>
 <body>
 
-  We're coming soon
+  <div class="logo">
+    <img src="/images/logo.svg" alt="logo">
+  </div>
 
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
 
-  Email Address
+  <div class="wrapper">
+    <div class="Text">
+      <h1><span class="were">We're</span> coming soon</h1>
+      <p>Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.</p>
+    </div>
+    
+    <div class="Input">
+      <input type="email" placeholder="Email Address" id="inputField">
+      <button onclick="func()" id="buttons">></button>
+    </div>
+      <p id="parag">Please provide a valid email</p>
+  </div>
+
+
   
-  <footer>
+  <div class="lady">
+      <img src="/images/hero-desktop.jpg" alt="hero" id="hero">
+      <img src="/images/hero-mobile.jpg" alt="hero" id="heron">
+  </div>
+
+  
+  <footer class="creds">
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://github.com/virinchi123/Frontend-Mentor-Base-Apparel-Coming-Soon">Rao Krishna Virinchi</a>.
     </p>
   </footer>
 </body>

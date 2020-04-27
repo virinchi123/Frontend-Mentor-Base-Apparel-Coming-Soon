@@ -1,0 +1,238 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "logo images" "texts images" "credits credits";
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-image: url(/images/bg-pattern-desktop.svg);
+  padding: 0px 0 0 100px;
+  -ms-grid-rows: 33px;
+      grid-template-rows: 33px;
+  -ms-grid-columns: 50vw;
+      grid-template-columns: 50vw;
+}
+
+.logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+.wrapper {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: texts;
+  padding: 20px;
+}
+
+.wrapper h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 20%;
+  letter-spacing: 28px;
+  color: #413a3a;
+}
+
+.wrapper h1 .were {
+  color: #ce9797;
+  font-weight: 300;
+  display: block;
+}
+
+.wrapper p {
+  color: #ce9797;
+  width: 70%;
+}
+
+.wrapper #parag {
+  font-size: 10px;
+  color: #f96262;
+  padding-left: 20px;
+  display: none;
+}
+
+.Input {
+  border: 1px solid;
+  border-radius: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 3;
+  border: 1px solid #ce9797;
+  width: 70%;
+}
+
+.Input input {
+  border: none;
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  z-index: 2;
+  border-radius: 50vh;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+}
+
+.Input input::-webkit-input-placeholder {
+  color: #ce9797;
+}
+
+.Input input:-ms-input-placeholder {
+  color: #ce9797;
+}
+
+.Input input::-ms-input-placeholder {
+  color: #ce9797;
+}
+
+.Input input::placeholder {
+  color: #ce9797;
+}
+
+.Input input #buttons:hover {
+  cursor: pointer;
+}
+
+.Input button {
+  border-radius: 50vh;
+  background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  height: 50px;
+  width: 90px;
+  margin: 0;
+  border: none;
+  color: white;
+}
+
+.lady {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: images;
+}
+
+.lady img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.lady #heron {
+  display: none;
+}
+
+.creds {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: credits;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media (max-width: 375px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 0;
+    width: 100%;
+  }
+  body .logo {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin: 30px;
+  }
+  body .lady {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  body .lady #hero {
+    display: none;
+  }
+  body .lady #heron {
+    display: initial;
+  }
+  body .lady img {
+    width: 100%;
+    height: 40vh;
+  }
+  body .wrapper {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    padding: 10%;
+    width: 80%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: auto;
+  }
+  body .wrapper h1 {
+    width: 100%;
+    font-size: 25px;
+    letter-spacing: 8px;
+    margin: 10%;
+  }
+  body .wrapper p {
+    width: initial;
+    font-size: 10px;
+  }
+  body .wrapper .Input {
+    width: initial;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  body .wrapper .Input input {
+    -webkit-box-flex: initial;
+        -ms-flex-positive: initial;
+            flex-grow: initial;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 169px;
+  }
+  body .wrapper .Input button {
+    border-radius: 100%;
+    height: auto;
+    width: 140px;
+  }
+  body .creds {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  body .creds p {
+    font-size: 6px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
